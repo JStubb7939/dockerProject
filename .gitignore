@@ -1,5 +1,6 @@
 ## Mac OSX ##
 .DS_Store
+.vscode
 
 ## NPM ##
 node_modules/
