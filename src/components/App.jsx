@@ -2,9 +2,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: this.props.videos,
-      currentVideo: this.props.videos[0]
+      videos: [],
+      currentVideo: null
     };
+  }
+
+  componentDidMount() {
+    this.getYouTubeVideos('react tutorials');
+  }
+
+  getYouTubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query,
+    };
+
+    this.props.searchYouTube(options, videos => {
+      this.setState({
+        videos: videos,
+        currentVideo: videos[0]
+      });
+    });
   }
 
   handleListEntryTitleClick(video) {
@@ -16,7 +34,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav handleSearchInputChange={this.getYouTubeVideos.bind(this)} />
         <div className='col-md-7'>
           <VideoPlayer video={ this.state.currentVideo }/>
         </div>
