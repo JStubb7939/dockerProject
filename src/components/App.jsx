@@ -7,6 +7,12 @@ class App extends React.Component {
     };
   }
 
+  handleListEntryTitleClick(video) {
+    this.setState({
+      currentVideo: video
+    });
+  }
+
   render() {
     return (
       <div>
@@ -15,7 +21,7 @@ class App extends React.Component {
           <VideoPlayer video={ this.state.currentVideo }/>
         </div>
         <div className='col-md-5'>
-          <VideoList videos={ this.state.videos }/>
+          <VideoList videos={ this.state.videos } handleListEntryTitleClick={ this.handleListEntryTitleClick.bind(this) }/>
         </div>
       </div>
     );
