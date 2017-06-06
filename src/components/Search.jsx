@@ -4,14 +4,14 @@ class Search extends React.Component {
     this.state = {
       searchQuery: ''
     };
-    this.debounceQuery = _.debounce(this.handleQuery, 1000);
+    this.debounceQuery = _.debounce(this.handleSearchQuery, 1000);
   }
 
-  handleQuery(e) {
-    this.props.getYoutubeVideos(e);
+  handleSearchQuery(value) {
+    this.props.handleSearchInputChange(value);
 
     this.setState({
-      searchQuery: e
+      searchQuery: value
     });
   }
 
