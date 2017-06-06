@@ -1,5 +1,5 @@
 var VideoPlayer = (props) => (
-  !props.video ? <div className="video-player">Please wait...</div> :
+  !props.video ? <div className="video-player">Please wait y'all...</div> :
   <div className='video-player'>
     <div className='embed-responsive embed-responsive-16by9'>
       <iframe className='embed-responsive-item' src={`https://www.youtube.com/embed/${props.video.id.videoId}`} allowFullScreen></iframe>

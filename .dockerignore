@@ -1,0 +1,10 @@
+## Mac OSX ##
+.DS_Store
+.vscode
+
+## NPM ##
+node_modules/
+npm-debug.log
+
+## Compiled files ##
+compiled/
