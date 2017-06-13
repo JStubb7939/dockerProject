@@ -12,7 +12,8 @@ var searchYouTube = (options, callback) => {
     },
     success: (result) => callback(result.items),
     dataType: 'json'
-  });
+  })
+  .catch(error => { console.log(error); });
 };
 
 window.searchYouTube = searchYouTube;

@@ -1,0 +1,10 @@
+db:
+  image: postgres
+recast.ly:
+  build: .
+  links:
+    - db
+  environment:
+    - PGHOST=db
+    - PGDATABASE=postgres
+    - PGUSER=postgres
